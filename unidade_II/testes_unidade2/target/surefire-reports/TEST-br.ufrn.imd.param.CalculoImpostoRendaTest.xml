@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="br.ufrn.imd.param.CalculoImpostoRendaTest" time="0.003" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="br.ufrn.imd.param.CalculoImpostoRendaTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="16.0.2+7"/>
@@ -55,8 +55,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase classname="br.ufrn.imd.param.CalculoImpostoRendaTest" name="testCalculoImpostoRenda[0]" time="0.003"/>
-  <testcase classname="br.ufrn.imd.param.CalculoImpostoRendaTest" name="testCalculoImpostoRenda[1]" time="0"/>
-  <testcase classname="br.ufrn.imd.param.CalculoImpostoRendaTest" name="testCalculoImpostoRenda[2]" time="0"/>
-  <testcase classname="br.ufrn.imd.param.CalculoImpostoRendaTest" name="testCalculoImpostoRenda[3]" time="0"/>
+  <testcase classname="br.ufrn.imd.param.CalculoImpostoRendaTest" name="testCalculoImpostoRendaAliquota1" time="0"/>
+  <testcase classname="br.ufrn.imd.param.CalculoImpostoRendaTest" name="testCalculoImpostoRendaAliquota2" time="0"/>
+  <testcase classname="br.ufrn.imd.param.CalculoImpostoRendaTest" name="testCalculoImpostoRendaAliquota3" time="0"/>
+  <testcase classname="br.ufrn.imd.param.CalculoImpostoRendaTest" name="testCalculoImpostoRendaIsenta" time="0"/>
 </testsuite>

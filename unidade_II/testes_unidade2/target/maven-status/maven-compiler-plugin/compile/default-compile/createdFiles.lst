@@ -1,2 +1,6 @@
 br/ufrn/imd/param/CalculoImpostoRenda.class
-br/ufrn/imd/App.class
+br/ufrn/imd/param/RendaIsenta.class
+br/ufrn/imd/param/Renda.class
+br/ufrn/imd/param/RendaAliquota2.class
+br/ufrn/imd/param/RendaAliquota3.class
+br/ufrn/imd/param/RendaAliquota1.class
