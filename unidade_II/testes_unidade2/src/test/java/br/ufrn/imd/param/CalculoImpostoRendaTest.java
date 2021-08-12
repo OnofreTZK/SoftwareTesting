@@ -1,14 +1,22 @@
 package br.ufrn.imd.param;
 
-import br.ufrn.imd.param.*;
-
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+
+/*
+ * Casos de testes com classes de equivalência
+ * o dominio de entrada foi repartido em quatro subconjuntos baseados em interface(X1, X2, X3, X4)
+ * X1 = Conjunto de entradas para renda isenta
+ * X2 = Conjunto de entradas para renda de aliquota 1
+ * X3 = Conjunto de entradas para renda de aliquota 2
+ * X4 = Conjunto de entradas para renda de aliquota 3
+ * */
+
 public class CalculoImpostoRendaTest {
 
-    // Conjunto Isento
+    // Conjunto Isento(X1)
     @Test
     public void testCalculoImpostoRendaIsenta() {
         double esperado_1 = 0;
@@ -21,7 +29,7 @@ public class CalculoImpostoRendaTest {
         assertEquals(esperado_4, CalculoImpostoRenda.calculaImposto(RendaIsenta.valor_4), 0.0);
     }
 
-    // Conjunto Aliquota 1
+    // Conjunto Aliquota 1(X2)
     @Test
     public void testCalculoImpostoRendaAliquota1() {
         double esperado_1 = RendaAliquota1.valor_1 * 0.1;
@@ -34,7 +42,7 @@ public class CalculoImpostoRendaTest {
         assertEquals(esperado_4, CalculoImpostoRenda.calculaImposto(RendaAliquota1.valor_4), 0.0);
     }
 
-    // Conjunto Aliquota 2
+    // Conjunto Aliquota 2(X2)
     @Test
     public void testCalculoImpostoRendaAliquota2() {
         // Arrendondado as casas decimais neste conjunto
@@ -48,7 +56,7 @@ public class CalculoImpostoRendaTest {
         assertEquals(esperado_4, CalculoImpostoRenda.calculaImposto(RendaAliquota2.valor_4), 0.0);
     }
 
-    // Conjunto Aliquota 3
+    // Conjunto Aliquota 3(X3)
     @Test
     public void testCalculoImpostoRendaAliquota3() {
         double esperado_1 = RendaAliquota3.valor_1 * 0.2;

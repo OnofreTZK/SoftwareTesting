@@ -1,7 +1,5 @@
 package br.ufrn.imd.param;
 
-import br.ufrn.imd.param.*;
-
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -21,6 +19,13 @@ public class CalculoImpostoRendaLimitesTest {
         this.esperado = esperado;
     }
 
+    /*
+     * Casos de testes com critério de Análise do Valor Limite
+     * [1] Limite da renda isenta: R$1200 -> Deve retornar 0% de imposto.
+     * [2, 3] Limites da renda de aliquota 1: R$1201 e R$5000 -> Devem retornar 10% de imposto
+     * [4, 5] Limites da renda de aliquota 2: R$5001 e R$10000 -> Devem retornar 15% de imposto
+     * [6] Limite da renda de aliquota 3: R$10001 -> Deve retornar 20% de imposto
+     * */
     @Parameters
     public static Object[][] renda() {
         return new Object[][] {
