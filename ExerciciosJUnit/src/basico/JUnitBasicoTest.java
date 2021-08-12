@@ -1,7 +1,14 @@
 package basico;
 
+// Aluno: Tiago Onofre Araujo
 
 import static org.junit.Assert.*;
+import org.junit.Test;
+
+
+// Adicionando Suite
+//@RunWith(Suite.class)
+//@Suite.SuiteClasses({JUnitBasicoTest.class})
 
 /*
  * Exercício - Introducao ao JUnit
@@ -11,43 +18,44 @@ import static org.junit.Assert.*;
  * 
  */
 
+ 
 public class JUnitBasicoTest {
 
+	@Test
+	public void testAssertTrue() {
+		assertTrue(true);
+	}
 	
-//	public void testAssertTrue() {
-//		assertTrue(false);
-//	}
 	
-	
-	
-//	public void testAssertFalse() {
-//	assertFalse(true);
-//	}
+	@Test
+	public void testAssertFalse() {
+		assertFalse(false);
+	}
 
 	/*
 	 * O JUnit informa o resultado esperado e o obtido.
 	 */
-	
-//	public void testAssertEqualInts() {
-//		assertEquals(1, 2);
-//	}	
-	
-	
-	
-//	public void testCheckingIntCalculation() {
-//		int value = 4;
-//		int doubled = value * 3;
-//		assertEquals(8, doubled);
-//	}	
+	@Test
+	public void testAssertEqualInts() {
+		assertEquals(1, 1);
+	}	
 	
 	
-
-//	public void testAssertExactlyEqualDoubles() {
-//		double value = 12.0;
-//		double result = value / 3;
-//		double delta = 0.0;
-//		assertEquals(6.0, result, delta);
-//	}
+	@Test
+	public void testCheckingIntCalculation() {
+		int value = 4;
+		int doubled = value * 2;
+		assertEquals(8, doubled);
+	}	
+	
+	
+	@Test
+	public void testAssertExactlyEqualDoubles() {
+		double value = 12.0;
+		double result = value / 2;
+		double delta = 0.0;
+		assertEquals(6.0, result, delta);
+	}
 	
 	
 	/*
@@ -56,16 +64,16 @@ public class JUnitBasicoTest {
 	 * que podem acontecer.
 	 * 
 	 */
-
-//	public void testAssertAlmostEqualDoubles() {
-//		double numerator = 10.0;
-//		double denominator = 3.0;
-//		double delta = 0.00001;
-//		double expected = 3.333;
-//		double quotient = numerator/denominator;
-//		
-//		assertEquals(expected, quotient, delta);
-//	}
+    @Test
+	public void testAssertAlmostEqualDoubles() {
+		double numerator = 10.0;
+		double denominator = 3.0;
+		double delta = 0.00001;
+		double expected = 3.33;
+		double quotient = Math.floor(numerator/denominator * 100)/ 100;
+		
+		assertEquals(expected, quotient, delta);
+	}
 	
 	/*
 	 * Strings can be compared too. Make this test pass by fixing
@@ -73,21 +81,23 @@ public class JUnitBasicoTest {
 	 * expected and actual strings differ
 	 */
 	
-//	public void testCompareStrings() {
-//		String greeting = "Hello";
-//		String greetee = "World";
-//		
-//		String whatToSay = greeting + greetee;
-//		
-//		assertEquals("Hello World", whatToSay);
-//	}
+	 @Test
+	public void testCompareStrings() {
+		String greeting = "Hello";
+		String greetee = "World";
+		
+		String whatToSay = greeting + " " + greetee;
+		
+		assertEquals("Hello World", whatToSay);
+	}
 	
-	
-//	public void testCompareStrings() {
-//		int[] array1 = {1,2,3,4};
-//		int[] array2 = {5,1,2,3,4};
-//		assertArrayEquals(array1, array2);
-//	}
+	@Test
+	public void testCompareArrays() {
+		int[] array1 = {1,2,3,4};
+		int[] array2 = {1,2,3,4};
+		assertArrayEquals(array1, array2);
+	}
 	
 		
 }
+

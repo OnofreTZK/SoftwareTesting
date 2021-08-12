@@ -47,7 +47,7 @@ public class Conta{
 	 * OperacaoIlegalException é lançada*/
 
 	 public void transferir (Conta destino, double valor) throws OperacaoIlegalException {
-		 this.creditar(valor);
+		 destino.creditar(valor);
 		 this.debitar(valor);
       }	
 	
