@@ -1,0 +1,47 @@
+[1] 
+    - Particionamento do espaço de entrada ou domínio de entrada
+        * É simples de modelar, não precisa de automação e não demanda tanta experiência.
+        * Não é necessário entender a implementação, mas somente a descricão de valores úteis
+        como entradas.
+        * Cada subconjunto do domínio é projetado a partir do conhecimento do comportamento 
+        esperado do software.
+        * Um bom caminho para aplicar é considerar os valores possíveis de cada parâmetro de
+        um subconjunto.
+        * A partição deve cobrir todo o domínio de entradas possíveis.
+    
+    - Modelagem por interface 
+        * Consiste nos valores de um subconjunto isoladamente e isto facilita a identificação das 
+        características.
+        * O isolamento do comportamento da aplicação permite uma abstração única de cada parâmetro
+        * Como não há necessidade de conhecimento do domínio, a fraqueza desta abordagem é que a 
+        a cobertura de testes pode ser incompleta.
+        * Partindo do mesmo ponto fraco, entradas que dependam da combinação de valores específicos
+        (vários parâmetros) podem deixar passar erros em subcombinações nas partições.
+
+    - Modelagem por funcionalidade 
+        * Basea-se nas entradas a partir da funcionalidade esperada do software, 
+        exigindo conhecimento do domínio da implementação.
+        * A comunidade acredita que testes baseados em funcionalidade tem melhor qualidade que os
+        de interface, pois inclui mais informações semânticas e consequentemente engloba de maneira
+        mais completa o domínio da aplicação.
+        * Os requisitos estão disponíveis antes da implementação. Permitindo o desenvolvimento dos
+        testes em paralelo ao desenvolvimento do software em si.
+        * A facilidade de definição das características funcionais está ligada diretamente a 
+        complexidade, tamanho e especificações do sistema.
+        * A própria definição dos casos testes acaba se tornando não trivial, tendo em vista que,
+        certos comportamentos do domínio não estão atrelados a parâmetros individuais da interface.
+
+[2]
+Explique com suas palavras o passo a passo para construção de testes a partir de casos de uso.
+    - Os casos de uso descrevem os requisitos funcionais para um determinado comportamento, identificam
+    o valor esperado, estrutura como o sistema será utilizado e por consequência indicam ao engenheiro
+    de testes um bom caminho para projetar sua cobertura de testes, uma vez que, ajudam a validar
+    a comportamento que visa ser certificado. Passo a passo:
+        (a) Selecionar o caso de uso que será testado.
+        (b) Identificar o fluxo principal e os fluxos alternativos.
+        (c) Faça um diagrama para auxiliar na visualização.
+        (d) A partir do diagrama identificar os cenários a serem avaliados.
+        (e) Escrever casos de testes detalhados baseando-se na estrutura do caso de uso 
+        para os cenários identificados afim de que o próprio caso ajuda a garantir o teste.
+        (f) Crie uma base de dados de certificação(identificando os valores de entrada).
+        (g) Tabule os resultados dos testes para review da equipe de desenvolvimento.
