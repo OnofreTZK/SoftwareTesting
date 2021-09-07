@@ -1,6 +1,6 @@
 br/ufrn/imd/param/Renda.class
-br/ufrn/imd/param/RendaAliquota3.class
 br/ufrn/imd/game/GameSeller.class
+br/ufrn/imd/param/RendaAliquota3.class
 br/ufrn/imd/game/ArgumentoInvalidoException.class
 br/ufrn/imd/param/CalculoImpostoRenda.class
 br/ufrn/imd/param/RendaIsenta.class
