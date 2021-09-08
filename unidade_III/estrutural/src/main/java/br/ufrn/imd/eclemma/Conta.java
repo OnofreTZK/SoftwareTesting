@@ -3,17 +3,26 @@ package br.ufrn.imd.eclemma;
 
 public class Conta{
 
-	private String codigo;
-	private double saldo = 0;
+	private double saldo = 0.0;
+	private String codigo = "000";
 
-	public Conta (String p_id, double p_saldo) { 
-		this.saldo = p_saldo;
-	    this.codigo = p_id;
+	public Conta (String p_id, double p_saldo) throws OperacaoIlegalException {
+		if(p_saldo >  0) {
+			this.saldo = p_saldo;
+			this.codigo = p_id;
+		}
+		else {
+			throw new OperacaoIlegalException();
+		}
 	}
 	
 	public double getSaldo() {
 		return saldo;
 	} 
+	
+	public String getCodigo() {
+		return codigo;
+	}
 
 	public double debitar (double valor) throws OperacaoIlegalException {
 		
@@ -47,8 +56,13 @@ public class Conta{
 	 * OperacaoIlegalException é lançada*/
 
 	 public void transferir (Conta destino, double valor) throws OperacaoIlegalException {
-		 destino.creditar(valor);
-		 this.debitar(valor);
+		 if(valor > 0 ) {
+			 destino.creditar(valor);
+			 this.debitar(valor);
+		 } 
+		 else {
+			 throw new OperacaoIlegalException();
+		 }
       }	
 	
 	 

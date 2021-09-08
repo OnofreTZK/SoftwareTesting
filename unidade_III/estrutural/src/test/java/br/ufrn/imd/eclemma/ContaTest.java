@@ -5,6 +5,36 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class ContaTest {
+	
+	@Test
+	public void testConstrutor() throws OperacaoIlegalException {
+		@SuppressWarnings("unused")
+		Conta conta = new Conta("000", 200);
+	}
+	
+	@Test(expected=OperacaoIlegalException.class) 
+	public void testConstrutorException() throws OperacaoIlegalException {
+		@SuppressWarnings("unused")
+		Conta conta = new Conta("000", -200);
+	}
+	
+	@Test
+	public void testSaldo() throws OperacaoIlegalException {
+		Conta conta = new Conta("111", 3000);
+		
+		double saldoRecuperado = conta.getSaldo();
+		
+		assertEquals(3000, saldoRecuperado, 0.0);
+	}
+	
+	@Test
+	public void testCodigo() throws OperacaoIlegalException {
+		Conta conta = new Conta("222", 6000);
+		
+		String idRecuperado = conta.getCodigo();
+		
+		assertSame("222", idRecuperado);
+	}
 
 	@Test
 	public void testDebitarSucesso() throws OperacaoIlegalException{
@@ -33,6 +63,20 @@ public class ContaTest {
 
 		// Testando saldo do pagante
 		assertEquals(saldoPaganteAntes-valorCobranca, saldoPaganteDepois, 0.0);
+	}
+	
+	@Test (expected=OperacaoIlegalException.class)
+	public void testCreditarException() throws OperacaoIlegalException{
+		Conta favorecido = new Conta("002", 100);
+		
+		favorecido.creditar(-100);
+	}
+	
+	@Test (expected=OperacaoIlegalException.class)
+	public void testDebitarException() throws OperacaoIlegalException{
+		Conta pagante = new Conta("001", 1000);
+	
+		pagante.debitar(-100);
 	}
 	
 	@Test (expected=OperacaoIlegalException.class)
